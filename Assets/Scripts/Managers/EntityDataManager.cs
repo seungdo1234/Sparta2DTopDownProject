@@ -15,7 +15,6 @@ public class EntityDataManager : MonoBehaviour
         {
             Instance = this;
             Entities = new List<EntityData>();
-            DontDestroyOnLoad(Instance);
         }
         else
         {

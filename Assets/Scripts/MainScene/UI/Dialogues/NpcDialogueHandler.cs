@@ -6,25 +6,33 @@ public class NpcDialogueHandler : MonoBehaviour
     [SerializeField] private DialogueTextInputHandler dialogueTextInputHandler;
 
     private PlayerInputController playerInputController;
+
     private void Start()
     {
         playerInputController = EntityDataManager.Instance.PlayerData.GetComponent<PlayerInputController>();
     }
+
     public void DialogueEvent()
     {
         if (dialogueData.DialogueComplete())
         {
-            dialogueData.ResetDialogue();
-            playerInputController.DialogueOn(false);
-            playerInputController.OnInteractEvent -= DialogueEvent;
-            dialogueTextInputHandler.gameObject.SetActive(false);
+            DialogueEnd();
             return;
         }
-
         
-        dialogueTextInputHandler.gameObject.SetActive(true);
-        playerInputController.DialogueOn(true);
+        if (!dialogueTextInputHandler.gameObject.activeSelf)
+        {
+            dialogueTextInputHandler.gameObject.SetActive(true);
+            playerInputController.SetDialogueState(true);
+        }
 
         dialogueTextInputHandler.SetDialogueText(dialogueData.GetDialogue());
+    }
+
+    private void DialogueEnd()
+    {
+        dialogueData.ResetDialogue();
+        playerInputController.SetDialogueState(false);
+        dialogueTextInputHandler.gameObject.SetActive(false);
     }
 }

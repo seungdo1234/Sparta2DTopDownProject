@@ -18,13 +18,13 @@ public class CharacterUIHandler : MonoBehaviour
     public void ChangeName()
     {
          nameText.text = EntityDataManager.Instance.PlayerData.Name;
-         playerInputController.ControllLocked(false);
+         playerInputController.ControlLocked(false);
     }
 
     public void ChangeCharacterClass(int characterNum)
     {
         EntityDataManager.Instance.PlayerData.SetCharacterClass(characterNum);
-        playerInputController.ControllLocked(false);
+        playerInputController.ControlLocked(false);
     }
   
 }

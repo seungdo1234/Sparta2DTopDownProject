@@ -5,12 +5,14 @@ public class TopDownMovement : MonoBehaviour
 {
     private TopDownController controller;
     private Rigidbody2D rigid;
-
+    private TopDownAnimationController topDownAnimationController;
+    
     private Vector2 movementDir = Vector2.zero;
     private void Awake()
     {
         controller = GetComponent<TopDownController>();
         rigid = GetComponent<Rigidbody2D>();
+        topDownAnimationController = GetComponent<TopDownAnimationController>();
     }
 
     private void Start()
@@ -31,6 +33,12 @@ public class TopDownMovement : MonoBehaviour
         rigid.velocity = dir;
     }
 
+    public void ResetVelocity()
+    {
+        movementDir = Vector2.zero;
+        rigid.velocity = Vector2.zero;
+        topDownAnimationController.SetAnimatorBool(topDownAnimationController.isRunning , false);
+    }
     private void FixedUpdate()
     {
         ApplyMovement(movementDir);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// NPC »óÈ£ÀÛ¿ë °ü·Ã ÇÃ·¹ÀÌ¾î Å½Áö Å¬·¡½º
+// NPC ìƒí˜¸ì‘ìš© ê´€ë ¨ í”Œë ˆì´ì–´ íƒì§€ í´ë˜ìŠ¤
 public class PlayerDetectionTrigger : MonoBehaviour
 {
     private PlayerInputController playerInputController;
@@ -16,7 +16,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
         playerInputController = EntityDataManager.Instance.PlayerData.GetComponent<PlayerInputController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) // NPC »óÈ£ÀÛ¿ë È°¼ºÈ­
+    private void OnTriggerEnter2D(Collider2D collision) // NPC ìƒí˜¸ì‘ìš© í™œì„±í™”
     {
         if (!collision.CompareTag("Player"))
         {
@@ -28,7 +28,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
         interactionIcon.gameObject.SetActive(true);
 
     }
-    private void OnTriggerExit2D(Collider2D collision) // NPC »óÈ£ÀÛ¿ë ºñÈ°¼ºÈ­
+    private void OnTriggerExit2D(Collider2D collision) // NPC ìƒí˜¸ì‘ìš© ë¹„í™œì„±í™”
     {
         if (!collision.CompareTag("Player"))
         {
@@ -45,7 +45,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
         while (true)
         {
             Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-            // È­¸é³»¿¡¼­ ÁÂÇ¥ + distance¸¸Å­ ¶³¾îÁø À§Ä¡¸¦ Slider UIÀÇ À§Ä¡·Î ¼³Á¤
+            // í™”ë©´ë‚´ì—ì„œ ì¢Œí‘œ + distanceë§Œí¼ ë–¨ì–´ì§„ ìœ„ì¹˜ë¥¼ Slider UIì˜ ìœ„ì¹˜ë¡œ ì„¤ì •
             interactionIcon.position = screenPosition + interactionIconPosition;
 
             yield return null;

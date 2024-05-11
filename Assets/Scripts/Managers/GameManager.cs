@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            Screen.SetResolution(1920,1080, true);
             DontDestroyOnLoad(Instance);
         }
         else

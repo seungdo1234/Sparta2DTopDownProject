@@ -13,10 +13,6 @@ public class TopDownController : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if(OnInteractEvent == null)
-        {
-
-        }
     }
 
     public void CallMoveEvent(Vector2 dir)
