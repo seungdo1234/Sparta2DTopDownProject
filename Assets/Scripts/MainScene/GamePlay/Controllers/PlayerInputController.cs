@@ -7,6 +7,7 @@ public class PlayerInputController : TopDownController
     private Camera camera;
 
     private bool isControlLocked = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -36,8 +37,17 @@ public class PlayerInputController : TopDownController
         }
     }
 
+    public void OnInteract(InputValue value)
+    {
+        if (!isControlLocked )
+        {
+            CallInteractEvent();
+        }
+    }
+
     public void ControllLocked(bool isTrue)
     {
         isControlLocked = isTrue;
     }
+
 }
