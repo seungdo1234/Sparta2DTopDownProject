@@ -7,7 +7,7 @@ public class PlayerInputController : TopDownController
     private Camera camera;
 
     private bool isControlLocked = false;
-
+    private bool dialogueOn = false;
     protected override void Awake()
     {
         base.Awake();
@@ -39,7 +39,7 @@ public class PlayerInputController : TopDownController
 
     public void OnInteract(InputValue value)
     {
-        if (!isControlLocked )
+        if (!isControlLocked  || dialogueOn)
         {
             CallInteractEvent();
         }
@@ -50,4 +50,9 @@ public class PlayerInputController : TopDownController
         isControlLocked = isTrue;
     }
 
+    public void DialogueOn(bool isTrue)
+    {
+        isControlLocked = isTrue;
+        dialogueOn = isTrue;
+    }
 }

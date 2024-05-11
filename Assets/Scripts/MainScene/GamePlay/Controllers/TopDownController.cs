@@ -11,7 +11,6 @@ public class TopDownController : MonoBehaviour
     public event Action<Vector2> OnLookEvent;
     public event Action OnInteractEvent;
 
-    private bool DialogueOn = false;
     protected virtual void Awake()
     {
         if(OnInteractEvent == null)
