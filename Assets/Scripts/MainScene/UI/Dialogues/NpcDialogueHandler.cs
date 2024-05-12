@@ -27,22 +27,24 @@ public class NpcDialogueHandler : MonoBehaviour
 
     public void DialogueEvent()
     {
-        if (dialogueData.DialogueComplete())
+        if (dialogueData.DialogueComplete()) // 대화가 끝났는지 확인
         {
-            ControlDialogueInterface(false);
+            // 끝났다면 대화 종료 및 초기화
+            ControlDialogueInterface(false); 
             dialogueData.ResetDialogue();
             return;
         }
         
-        if (!dialogueTextInputHandler.gameObject.activeSelf)
+        if (!dialogueTextInputHandler.gameObject.activeSelf) // 대화 창이 켜져있지 않다면 대화 시작
         {
             ControlDialogueInterface(true);
         }
 
+        // 대화 창 텍스트에 대화 저장
         dialogueTextInputHandler.SetDialogueText(dialogueData.GetDialogue());
     }
 
-    private void ControlDialogueInterface(bool isTrue)
+    private void ControlDialogueInterface(bool isTrue) // 대화 창 활성화/비활성화
     {
         playerInputController.SetDialogueState(isTrue);
         dialogueTextInputHandler.gameObject.SetActive(isTrue);
