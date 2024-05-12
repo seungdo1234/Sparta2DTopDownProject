@@ -6,8 +6,8 @@ public class PlayerInputController : TopDownController
 {
     private Camera camera;
 
-    private bool dialogueStateOn = false;
-    private bool IsControlLock = false;
+    private bool dialogueStateOn = false; // 대화 창 활성화 표시 bool변수
+    private bool IsControlLock = false; // 플레이어 입력을 제한하는 bool변수
     
     private TopDownMovement topDownMovement;
     protected override void Awake()
@@ -64,11 +64,15 @@ public class PlayerInputController : TopDownController
     public void ControlLocked(bool isTrue)
     {
         IsControlLock = isTrue;
-        topDownMovement.ResetVelocity();
+        if (isTrue)
+        {
+            topDownMovement.ResetVelocity();
+        }
     }
 
     public void SetDialogueState(bool isTrue)
     {
+        // 대화 창이 활성화되면 상호작용 입력을 제외한 나머지 플레이어 입력을 제한해야함
         ControlLocked(isTrue);
         dialogueStateOn = isTrue;
     }

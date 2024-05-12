@@ -19,7 +19,14 @@ public class TextInputHandler : MonoBehaviour
         joinBtn.interactable = textLength >= minNameLength;
     }
 
-    public void SetPlayerName()
+    // StartScene JoinBtn OnClick
+    public void SetPlayerNameInLogin()
+    {
+        PlayerPrefs.SetString("PlayerName",nameTextField.text);
+    }
+    
+    // MainScene JoinBtn OnClick
+    public void SetPlayerNameInGame()
     {
         EntityDataManager.Instance.PlayerData.SetPlayerName(nameTextField.text);
     }

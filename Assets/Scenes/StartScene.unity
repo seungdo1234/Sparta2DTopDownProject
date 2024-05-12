@@ -653,7 +653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTextField: {fileID: 128645518}
   joinBtn: {fileID: 735578825}
-  maxNameLength: 10
   minNameLength: 2
 --- !u!114 &285786379
 MonoBehaviour:
@@ -1116,7 +1115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 285786378}
         m_TargetAssemblyTypeName: TextInputHandler, Assembly-CSharp
-        m_MethodName: SetPlayerName
+        m_MethodName: SetPlayerNameInLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,7 +1127,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1071680543}
         m_TargetAssemblyTypeName: CharacterClassSelect, Assembly-CSharp
-        m_MethodName: DicideCharacterClass
+        m_MethodName: DicideCharacterClassInLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1405,7 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43947c7c182e9e44a68545b928cbd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CharacterClass>k__BackingField: 0
+  playerName: 
 --- !u!4 &1138714296
 Transform:
   m_ObjectHideFlags: 0

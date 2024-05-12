@@ -13,12 +13,12 @@ public class TimeTextHandler : MonoBehaviour
         timeText = GetComponent<TextMeshProUGUI>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(UpdateTimeText());
     }
 
-    private IEnumerator UpdateTimeText()
+    private IEnumerator UpdateTimeText() // 시간 업데이트 코루틴
     {
         while (true)
         {

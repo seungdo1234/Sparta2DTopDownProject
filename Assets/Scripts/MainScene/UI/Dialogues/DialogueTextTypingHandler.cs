@@ -15,18 +15,19 @@ public class DialogueTextTypingHandler : MonoBehaviour
         wait = new WaitForSeconds(typingSpeed);
     }
 
-    public void TypingDialogueText(string text)
+    public void TypingDialogueText(string text) 
     {
+        // text에 '@'가 존재한다면 플레이어 이름으로 치환
         string playerName = EntityDataManager.Instance.PlayerData.Name;
         text = text.Replace("\'@\'", $"\'{playerName}\'");
         
-        if (!IsTyping)
+        if (!IsTyping) // 타이핑 시작
         {
             dialogueText.text = "";
             IsTyping = true;
             StartCoroutine(TextTyping(text));
         }
-        else
+        else // 타이핑 중일 땐 전체 완성
         {
             IsTyping = false;
             dialogueText.text = text;
@@ -42,5 +43,6 @@ public class DialogueTextTypingHandler : MonoBehaviour
             typingCount++;
             yield return wait;
         }
+        IsTyping = false;
     }
 }   

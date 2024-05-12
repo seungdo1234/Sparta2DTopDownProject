@@ -33,7 +33,7 @@ public class TopDownMovement : MonoBehaviour
         rigid.velocity = dir;
     }
 
-    public void ResetVelocity()
+    public void ResetVelocity() // 플레이어 움직임이 제한될 때 호출
     {
         movementDir = Vector2.zero;
         rigid.velocity = Vector2.zero;

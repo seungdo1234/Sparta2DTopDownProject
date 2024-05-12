@@ -15,7 +15,14 @@ public class CharacterClassSelect : MonoBehaviour
         selectCharacterImage.sprite = characterSprites[characterNum];
     }
 
-    public void DicideCharacterClass()
+    // StartScene JoinBtn OnClick
+    public void DicideCharacterClassInLogin()
+    {
+        PlayerPrefs.SetInt("PlayerClass",characterNum);
+    }
+    
+    // MainScene JoinBtn OnClick
+    public void DicideCharacterClassInGame(int characterNum)
     {
         EntityDataManager.Instance.PlayerData.SetCharacterClass(characterNum);
     }

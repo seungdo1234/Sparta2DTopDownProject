@@ -16,11 +16,11 @@ public class TopDownAnimationController : AnimationController
         ChangeCharacter();
     }
 
-    public void ChangeCharacter()
+    public void ChangeCharacter() // 캐릭터 변경
     {
         anim.runtimeAnimatorController = animatorControllers[(int)EntityDataManager.Instance.PlayerData.CharacterClass - 1];
     }
-    private void Move(Vector2 direction)
+    private void Move(Vector2 direction) 
     {
         anim.SetBool(isRunning, direction != Vector2.zero);
     }
@@ -28,7 +28,7 @@ public class TopDownAnimationController : AnimationController
     {
         anim.SetBool(isHit, true);
     }
-    public void SetAnimatorBool(int id, bool isTrue)
+    public void SetAnimatorBool(int id, bool isTrue)  
     {
         anim.SetBool(id, isTrue);
     }

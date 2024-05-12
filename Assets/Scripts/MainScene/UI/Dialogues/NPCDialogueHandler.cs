@@ -32,7 +32,7 @@ public class NPCDialogueHandler : MonoBehaviour
         {
             currentText = dialogueData.GetDialogue();
         }
-        dialogueTextTypingHandler.TypingDialogueText(currentText);
+        dialogueTextTypingHandler.TypingDialogueText(currentText); // 대화 타이핑
     }
 
     private void ControlDialogueInterface(bool isTrue) // 대화 창 활성화/비활성화

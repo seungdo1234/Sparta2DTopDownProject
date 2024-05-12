@@ -5016,6 +5016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43947c7c182e9e44a68545b928cbd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
 --- !u!4 &289021894
 Transform:
   m_ObjectHideFlags: 0
@@ -6554,7 +6555,7 @@ MonoBehaviour:
     - "\uACF5\uC8FC\uB97C \uAD6C\uD558\uB7EC \uC654\uAD6C\uB098."
     - "\uC5BC\uB978 \uC774 \uB358\uC804 \uC548\uC5D0 \uAC07\uD600\uC788\uB294 \uACF5\uC8FC\uB97C
       \uAD6C\uD574\uC918."
-  dialogueTextInputHandler: {fileID: 5807438199448065504}
+  dialogueTextTypingHandler: {fileID: 5807438199448065504}
 --- !u!114 &1020815193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6567,7 +6568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962e83b51f69c334ba6238f3955786a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: " \uCC9C\uC0AC"
+  <Name>k__BackingField: "\uCC9C\uC0AC"
 --- !u!1 &1130262292
 GameObject:
   m_ObjectHideFlags: 0
@@ -15999,7 +16000,6 @@ GameObject:
   - component: {fileID: 1670495384}
   - component: {fileID: 1670495385}
   - component: {fileID: 1670495386}
-  - component: {fileID: 1670495387}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16193,19 +16193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\uC2B9\uB3C4"
   <CharacterClass>k__BackingField: 1
---- !u!114 &1670495387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670495376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e642e803a3bda94d93c51c64db27f51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 301172801}
 --- !u!1 &1709832268
 GameObject:
   m_ObjectHideFlags: 0
@@ -16824,8 +16811,9 @@ GameObject:
   - component: {fileID: 1985950977}
   - component: {fileID: 1985950980}
   - component: {fileID: 1985950979}
+  - component: {fileID: 1985950981}
   m_Layer: 5
-  m_Name: NameBG
+  m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16889,6 +16877,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985950976}
   m_CullTransparentMesh: 1
+--- !u!114 &1985950981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985950976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710a3d98929d4d341894b4603e21df09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1986290206
 GameObject:
   m_ObjectHideFlags: 0
@@ -17217,9 +17217,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670495387}
-        m_TargetAssemblyTypeName: CharacterUIHandler, Assembly-CSharp
-        m_MethodName: ChangeCharacterClass
+      - m_Target: {fileID: 2763418305796062659}
+        m_TargetAssemblyTypeName: CharacterClassSelect, Assembly-CSharp
+        m_MethodName: DicideCharacterClassInGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17244,6 +17244,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2763418305796062658}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670495380}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: ControlLocked
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17395,7 +17407,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181212760135578733}
         m_TargetAssemblyTypeName: TextInputHandler, Assembly-CSharp
-        m_MethodName: SetPlayerName
+        m_MethodName: SetPlayerNameInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17405,10 +17417,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1670495387}
-        m_TargetAssemblyTypeName: CharacterUIHandler, Assembly-CSharp
-        m_MethodName: ChangeName
-        m_Mode: 1
+      - m_Target: {fileID: 1670495380}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: ControlLocked
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17421,6 +17433,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1985950981}
+        m_TargetAssemblyTypeName: PlayerNameTextHandler, Assembly-CSharp
+        m_MethodName: PlayerNameTextUpdate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17843,6 +17867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2729856988950964512}
+  - component: {fileID: 2763418305796062659}
   m_Layer: 5
   m_Name: CharacterSelectPanel
   m_TagString: Untagged
@@ -17850,6 +17875,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &2763418305796062659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763418305796062658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4a5dc7ba82b854a96799c82e1535d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSprites: []
+  selectCharacterImage: {fileID: 0}
 --- !u!224 &2897285417557872431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18841,6 +18880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 5807438198030953280}
+  typingSpeed: 0.1
 --- !u!114 &5812693052341491977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19214,9 +19254,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670495387}
-        m_TargetAssemblyTypeName: CharacterUIHandler, Assembly-CSharp
-        m_MethodName: ChangeCharacterClass
+      - m_Target: {fileID: 2763418305796062659}
+        m_TargetAssemblyTypeName: CharacterClassSelect, Assembly-CSharp
+        m_MethodName: DicideCharacterClassInGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19241,6 +19281,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2763418305796062658}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670495380}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: ControlLocked
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

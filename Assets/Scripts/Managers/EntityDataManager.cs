@@ -7,14 +7,14 @@ public class EntityDataManager : MonoBehaviour
     public static EntityDataManager Instance;
 
     [field:SerializeField] public PlayerData PlayerData { get; private set; }
-    public List<EntityData> Entities { get; private set; }
+    public List<NPCData> NPCList { get; private set; }
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            Entities = new List<EntityData>();
+            NPCList = new List<NPCData>();
         }
         else
         {
@@ -22,9 +22,9 @@ public class EntityDataManager : MonoBehaviour
         }
     }
 
-    public void CreateEntities(EntityData entityData)
+    public void CreateNPCs(NPCData entityData) // 존재하는 NPC 정보를 NPC 리스트에 넣음
     {
-        Entities.Add(entityData);
+        NPCList.Add(entityData);
     }
     
 }

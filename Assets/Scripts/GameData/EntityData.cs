@@ -6,5 +6,4 @@ using UnityEngine;
 public class EntityData : MonoBehaviour
 {
     [field:SerializeField] public string Name { get; protected set; }
-    
 }

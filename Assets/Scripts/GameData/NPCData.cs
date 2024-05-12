@@ -6,6 +6,6 @@ public class NPCData : EntityData
 {
     private void Start()
     {
-        EntityDataManager.Instance.CreateEntities(this);
+        EntityDataManager.Instance.CreateNPCs(this);
     }
 }

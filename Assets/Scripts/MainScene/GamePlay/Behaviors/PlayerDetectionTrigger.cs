@@ -26,8 +26,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
         isPlayerInside = true;
         StartCoroutine(InteractionIconPositionUpdater());
         interactionIcon.gameObject.SetActive(true);
-
-        controller.OnInteractEvent += npcDialogueHandler.DialogueEvent;
+        controller.OnInteractEvent += npcDialogueHandler.DialogueEvent; // 이벤트 추가
     }
     private void OnTriggerExit2D(Collider2D collision) // NPC 상호작용 비활성화
     {
@@ -38,8 +37,8 @@ public class PlayerDetectionTrigger : MonoBehaviour
 
         isPlayerInside = false;
         interactionIcon.gameObject.SetActive(false);
-        controller.OnInteractEvent -= npcDialogueHandler.DialogueEvent;
-    }
+        controller.OnInteractEvent -= npcDialogueHandler.DialogueEvent; // 이벤트 삭제
+    } 
 
     private IEnumerator InteractionIconPositionUpdater() // 상호작용 UI 위치를 NPC 옆에 표시
     {

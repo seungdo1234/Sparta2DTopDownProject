@@ -9,14 +9,14 @@ public class UserViewHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI UserText;
 
 
-    private void OnEnable()
+    private void OnEnable() // 참여 사용자 최신화
     {
-        List<EntityData> entities = EntityDataManager.Instance.Entities;
+        List<NPCData> npcList = EntityDataManager.Instance.NPCList;
         UserText.text = $"{EntityDataManager.Instance.PlayerData.Name}\n";
         
-        for (int i = 0; i < entities.Count; i++)
+        for (int i = 0; i < npcList.Count; i++)
         {
-            UserText.text += $"{entities[i].Name}\n";
+            UserText.text += $"{npcList[i].Name}\n";
         }
     }
 }
