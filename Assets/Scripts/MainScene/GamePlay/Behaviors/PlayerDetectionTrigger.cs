@@ -7,10 +7,7 @@ public class PlayerDetectionTrigger : MonoBehaviour
 {
     private TopDownController controller;
     [SerializeField] private NPCDialogueHandler npcDialogueHandler;
-    [SerializeField] private RectTransform interactionIcon; // 상호 작용 가능 UI
-    [SerializeField] private Vector3 interactionIconPosition; // 상호 작용 가능 UI가 표시될 위치 
-
-    private bool isPlayerInside = false; // 플레이어가 범위 안으로 들어왔다면 true
+    
     private void Start()
     {
         controller = EntityDataManager.Instance.PlayerData.GetComponent<TopDownController>();
@@ -22,10 +19,8 @@ public class PlayerDetectionTrigger : MonoBehaviour
         {
             return;
         }
-
-        isPlayerInside = true;
-        StartCoroutine(InteractionIconPositionUpdater());
-        interactionIcon.gameObject.SetActive(true);
+        
+        npcDialogueHandler.InteractionIcon.SetupInteractionIcon(transform);
         controller.OnInteractEvent += npcDialogueHandler.DialogueEvent; // 이벤트 추가
     }
     private void OnTriggerExit2D(Collider2D collision) // NPC 상호작용 비활성화
@@ -34,22 +29,9 @@ public class PlayerDetectionTrigger : MonoBehaviour
         {
             return;
         }
-
-        isPlayerInside = false;
-        interactionIcon.gameObject.SetActive(false);
+        
+        npcDialogueHandler.InteractionIcon.DisableInteractionIcon();
         controller.OnInteractEvent -= npcDialogueHandler.DialogueEvent; // 이벤트 삭제
     } 
 
-    private IEnumerator InteractionIconPositionUpdater() // 상호작용 UI 위치를 NPC 옆에 표시
-    {
-        while (isPlayerInside)
-        {
-            // Canvas 상에서 NPC의 위치를 구함
-            Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-            // 상호 작용 아이콘을 NPC 옆으로 이동
-            interactionIcon.position = screenPosition + interactionIconPosition;
-
-            yield return null;
-        }
-    }
 }

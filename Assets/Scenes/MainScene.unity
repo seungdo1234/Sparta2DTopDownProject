@@ -5977,6 +5977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 756351639}
+  - component: {fileID: 756351640}
   m_Layer: 5
   m_Name: PlayerInteractionIcon
   m_TagString: Untagged
@@ -6005,6 +6006,19 @@ RectTransform:
   m_AnchoredPosition: {x: 118, y: 355.4}
   m_SizeDelta: {x: 155.584, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &756351640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756351638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56a882e43214496bb258cd4d1d58db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionIconPosition: {x: 120, y: -10, z: 0}
 --- !u!1 &845735746
 GameObject:
   m_ObjectHideFlags: 3
@@ -6555,6 +6569,7 @@ MonoBehaviour:
     - "\uC5BC\uB978 \uC774 \uB358\uC804 \uC548\uC5D0 \uAC07\uD600\uC788\uB294 \uACF5\uC8FC\uB97C
       \uAD6C\uD574\uC918."
   dialogueTextTypingHandler: {fileID: 5807438199448065504}
+  interactionIcon: {fileID: 756351640}
   cameraZoomHandler: {fileID: 2087966471}
 --- !u!114 &1020815193
 MonoBehaviour:
@@ -14051,8 +14066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogueHandler: {fileID: 1020815192}
-  interactionIcon: {fileID: 756351639}
-  interactionIconPosition: {x: 120, y: -10, z: 0}
 --- !u!1 &1641880144
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,15 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 
 public class CameraZoomHandler : TopDownCameraController
 {
-    private float baseOrthoSize;
+
     [SerializeField] private float zoomOrthoSize;
     [SerializeField] private float zoomLerpTime;
+    private float baseOrthoSize;
+    private float currentTime = float.MaxValue;
     
-    
+    public float ZoomLerpTime => zoomLerpTime;
     protected override void Start()
     {
         base.Start();
@@ -26,9 +25,15 @@ public class CameraZoomHandler : TopDownCameraController
     {
         StartCoroutine(CameraZoomCoroutine(zoomOrthoSize, baseOrthoSize));
     }
+
+    public bool IsZoomEventRunning()
+    {
+        return currentTime < zoomLerpTime;
+    }
+    
     private IEnumerator CameraZoomCoroutine(float start, float end)
     {
-        float currentTime = 0f;
+        currentTime = 0f;
 
         while (currentTime < zoomLerpTime)
         {
