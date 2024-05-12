@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class DialogueData 
 {
-     private int dialogueStep = 0;
+    private int dialogueStep = 0;
     public string[] dialogues;
 
     public string GetDialogue()
