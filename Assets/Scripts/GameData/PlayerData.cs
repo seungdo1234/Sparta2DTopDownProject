@@ -3,21 +3,24 @@ using UnityEngine;
 
 public class PlayerData : EntityData
 {
-    [field:SerializeField]public ECharacterClass CharacterClass { get; private set; }
+    [field: Header("# PlayerData")] 
+    [SerializeField] private ECharacterClass characterClass;
+
+    public ECharacterClass CharacterClass => characterClass;
 
     private void Awake()
     {
-        Name = PlayerPrefs.GetString("PlayerName");
-        CharacterClass = (ECharacterClass)PlayerPrefs.GetInt("PlayerClass") + 1;
+        base.entityName = PlayerPrefs.GetString("PlayerName");
+        characterClass = (ECharacterClass)PlayerPrefs.GetInt("PlayerClass") + 1;
     }
 
     public void SetPlayerName(string name)
     {
-        Name = name;
+        base.entityName = name;
     }
 
     public void SetCharacterClass(int characterClassNum)
     {
-        CharacterClass = (ECharacterClass)characterClassNum + 1;
+        characterClass = (ECharacterClass)characterClassNum + 1;
     }
 }

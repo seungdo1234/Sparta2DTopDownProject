@@ -2,8 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EntityData : MonoBehaviour
 {
-    [field:SerializeField] public string Name { get; protected set; }
+    [Header("# EntityData")] 
+    [SerializeField] protected string entityName;
+    [SerializeField] protected float moveSpeed;
+
+    public string Name => entityName;
+    public float MoveSpeed => moveSpeed;
 }

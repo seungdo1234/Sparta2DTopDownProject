@@ -6,9 +6,10 @@ public class EntityDataManager : MonoBehaviour
 {
     public static EntityDataManager Instance;
 
-    [field:SerializeField] public PlayerData PlayerData { get; private set; }
+    [SerializeField] private PlayerData playerData;
     public List<NPCData> NPCList { get; private set; }
 
+    public PlayerData PlayerData => playerData;
     private void Awake()
     {
         if (Instance == null)

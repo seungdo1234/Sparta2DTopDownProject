@@ -28,7 +28,7 @@ public class TopDownMovement : MonoBehaviour
     private void ApplyMovement(Vector2 dir) // 실제로 이동을 하는 함수
     {
         // 스탯 적용
-        dir *= 5;
+        dir *= EntityDataManager.Instance.PlayerData.MoveSpeed;
 
         rigid.velocity = dir;
     }

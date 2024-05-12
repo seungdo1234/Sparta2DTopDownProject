@@ -2136,11 +2136,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 756351639}
   - {fileID: 1351072320}
   - {fileID: 4697280147126496184}
   - {fileID: 2729856988950964512}
   - {fileID: 1196327801}
-  - {fileID: 756351639}
   - {fileID: 5807438199448065489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5016,7 +5016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43947c7c182e9e44a68545b928cbd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
 --- !u!4 &289021894
 Transform:
   m_ObjectHideFlags: 0
@@ -5196,7 +5195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deff
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1a7ead7cc78e8f7469827798a3851514, type: 2}
   m_sharedMaterial: {fileID: 5507061587117817568, guid: 1a7ead7cc78e8f7469827798a3851514, type: 2}
@@ -6568,7 +6567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962e83b51f69c334ba6238f3955786a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "\uCC9C\uC0AC"
+  entityName: "\uCC9C\uC0AC"
+  moveSpeed: 0
 --- !u!1 &1130262292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7245,7 +7245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2009f68724c93c249b58373d3800939b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayerData>k__BackingField: {fileID: 1670495386}
+  playerData: {fileID: 1670495386}
 --- !u!4 &1362850407
 Transform:
   m_ObjectHideFlags: 0
@@ -16191,8 +16191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254426851ec8432cbe01ef41875f59a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "\uC2B9\uB3C4"
-  <CharacterClass>k__BackingField: 1
+  entityName: 
+  moveSpeed: 5
+  characterClass: 0
 --- !u!1 &1709832268
 GameObject:
   m_ObjectHideFlags: 0
@@ -18880,7 +18881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 5807438198030953280}
-  typingSpeed: 0.1
+  typingSpeed: 0.05
 --- !u!114 &5812693052341491977
 MonoBehaviour:
   m_ObjectHideFlags: 0
