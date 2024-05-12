@@ -6464,7 +6464,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1020815189}
   - component: {fileID: 1020815191}
-  - component: {fileID: 1020815190}
   - component: {fileID: 1020815192}
   m_Layer: 0
   m_Name: Angel
@@ -6491,19 +6490,6 @@ Transform:
   - {fileID: 1618722040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1020815190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020815186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962e83b51f69c334ba6238f3955786a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: "\uCC9C\uC0AC"
 --- !u!61 &1020815191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16191,7 +16177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254426851ec8432cbe01ef41875f59a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Deff
+  <Name>k__BackingField: "\uC2B9\uB3C4"
   <CharacterClass>k__BackingField: 1
 --- !u!114 &1670495387
 MonoBehaviour:
@@ -18819,7 +18805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &5807438199448065503
 CanvasRenderer:
   m_ObjectHideFlags: 0
