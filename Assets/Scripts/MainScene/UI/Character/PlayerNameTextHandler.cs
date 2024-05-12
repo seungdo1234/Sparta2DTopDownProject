@@ -8,10 +8,11 @@ using TMPro;
 public class PlayerNameTextHandler : MonoBehaviour
 {
     private TextMeshProUGUI playerNameText;
-
+    private RectTransform rect;
     private void Awake()
     {
         playerNameText = GetComponentInChildren<TextMeshProUGUI>();
+        rect = GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -19,8 +20,10 @@ public class PlayerNameTextHandler : MonoBehaviour
         PlayerNameTextUpdate();
     }
 
-    public void PlayerNameTextUpdate()
+    public void PlayerNameTextUpdate() // 닉네임 업데이트
     {
         playerNameText.text = EntityDataManager.Instance.PlayerData.Name;
+        // 닉네임 길이에 맞게 배경 이미지 크기도 조절
+        rect.sizeDelta = new Vector2(playerNameText.preferredWidth + 0.3f, rect.sizeDelta.y);
     }
 }

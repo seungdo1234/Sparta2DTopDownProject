@@ -10,6 +10,7 @@ public class PlayerData : EntityData
 
     private void Awake()
     {
+        // StartScene에서 저장한 이름과 직업을 불러옴
         base.entityName = PlayerPrefs.GetString("PlayerName");
         characterClass = (ECharacterClass)PlayerPrefs.GetInt("PlayerClass") + 1;
     }
