@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerDetectionTrigger : MonoBehaviour
 {
     private TopDownController controller;
-    [SerializeField] private NpcDialogueHandler npcDialogueHandler;
+    [SerializeField] private NPCDialogueHandler npcDialogueHandler;
     [SerializeField] private RectTransform interactionIcon; // 상호 작용 가능 UI
     [SerializeField] private Vector3 interactionIconPosition; // 상호 작용 가능 UI가 표시될 위치 
 

@@ -1,10 +1,10 @@
 [System.Serializable]
 public class DialogueData 
 {
-    private int dialogueStep = 0; // ´ëÈ­ ´Ü°è 
-    public string[] dialogues; // ´Ü°èº° ´ëÈ­¸¦ ÀúÀåÇÏ´Â ¹®ÀÚ¿­ ¹è¿­
+    private int dialogueStep = 0; // ëŒ€í™” ë‹¨ê³„ 
+    public string[] dialogues; // ë‹¨ê³„ë³„ ëŒ€í™”ë¥¼ ì €ì¥í•˜ëŠ” ë¬¸ìì—´ ë°°ì—´
 
-    public string GetDialogue() // ´ëÈ­ ¹İÈ¯
+    public string GetDialogue() // ëŒ€í™” ë°˜í™˜
     {
         if(dialogues.Length <= dialogueStep)
         {
@@ -14,13 +14,14 @@ public class DialogueData
         return dialogues[dialogueStep++];
     }
 
-    public void ResetDialogue() // ´ôÈ­ ´Ü°è ÃÊ±âÈ­
+    public void ResetDialogue() // ëŒœí™” ë‹¨ê³„ ì´ˆê¸°í™”
     {
         dialogueStep = 0;
     }
 
-    public bool DialogueComplete() // ´ëÈ­°¡ ³¡³µ´Â Áö ¹İÈ¯
+    public bool DialogueComplete() // ëŒ€í™”ê°€ ëë‚¬ëŠ” ì§€ ë°˜í™˜
     {
         return dialogues.Length <= dialogueStep;
     }
+    
 }
