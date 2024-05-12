@@ -2,8 +2,8 @@
 
 public class NpcDialogueHandler : MonoBehaviour
 {
-    [SerializeField] private DialogueData dialogueData;
-    [SerializeField] private DialogueTextInputHandler dialogueTextInputHandler;
+    [SerializeField] private DialogueData dialogueData; // NPC 대화 정보
+    [SerializeField] private DialogueTextInputHandler dialogueTextInputHandler; // 대화 창
 
     private PlayerInputController playerInputController;
 

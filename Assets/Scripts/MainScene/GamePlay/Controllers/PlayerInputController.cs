@@ -55,7 +55,10 @@ public class PlayerInputController : TopDownController
             return;
         }
 
-        CallInteractEvent();
+        if (value.isPressed) // 상호작용 키 누름
+        {
+            CallInteractEvent();
+        }
     }
 
     public void ControlLocked(bool isTrue)
