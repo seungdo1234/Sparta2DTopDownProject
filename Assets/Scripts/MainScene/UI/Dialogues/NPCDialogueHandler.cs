@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class NPCDialogueHandler : MonoBehaviour
 {
     [SerializeField] private DialogueData dialogueData; // NPC 대화 정보
     [SerializeField] private DialogueTextTypingHandler dialogueTextTypingHandler; // 대화 창
+    [SerializeField] private CameraZoomHandler cameraZoomHandler; // 카메라 줌
 
     private PlayerInputController playerInputController;
     private string currentText;
@@ -17,6 +19,7 @@ public class NPCDialogueHandler : MonoBehaviour
     {
         if (dialogueData.DialogueComplete() && !dialogueTextTypingHandler.IsTyping) // 대화가 끝났는지 확인
         {
+            cameraZoomHandler.ZoomOut();
             // 끝났다면 대화 종료 및 초기화
             ControlDialogueInterface(false); 
             dialogueData.ResetDialogue();
@@ -25,6 +28,7 @@ public class NPCDialogueHandler : MonoBehaviour
         
         if (!dialogueTextTypingHandler.gameObject.activeSelf) // 대화 창이 켜져있지 않다면 대화 시작
         {
+            cameraZoomHandler.ZoomIn();
             ControlDialogueInterface(true);
         }
 

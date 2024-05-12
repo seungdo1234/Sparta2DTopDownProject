@@ -288,7 +288,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: -1.07}
-  m_SizeDelta: {x: 2.5, y: 0.7}
+  m_SizeDelta: {x: 3.5, y: 0.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18320890
 MonoBehaviour:
@@ -6555,6 +6555,7 @@ MonoBehaviour:
     - "\uC5BC\uB978 \uC774 \uB358\uC804 \uC548\uC5D0 \uAC07\uD600\uC788\uB294 \uACF5\uC8FC\uB97C
       \uAD6C\uD574\uC918."
   dialogueTextTypingHandler: {fileID: 5807438199448065504}
+  cameraZoomHandler: {fileID: 2087966471}
 --- !u!114 &1020815193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16835,10 +16836,10 @@ RectTransform:
   - {fileID: 301172800}
   m_Father: {fileID: 18320889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2.5, y: 0.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985950979
 MonoBehaviour:
@@ -16984,6 +16985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087966470}
   - component: {fileID: 2087966469}
+  - component: {fileID: 2087966471}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -17046,6 +17048,20 @@ Transform:
   - {fileID: 845735747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087966471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087966468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baaacead5743819438caa616326a5184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomOrthoSize: 3.5
+  zoomLerpTime: 0.25
 --- !u!222 &119013790626270655
 CanvasRenderer:
   m_ObjectHideFlags: 0
