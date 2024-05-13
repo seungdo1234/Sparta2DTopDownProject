@@ -8,7 +8,8 @@ public class CameraZoomHandler : TopDownCameraController
     [SerializeField] private float zoomLerpTime;
     private float baseOrthoSize;
     private float currentTime = float.MaxValue;
-    
+
+    private Coroutine zoomEventCoroutine;
     public float ZoomLerpTime => zoomLerpTime;
     protected override void Start()
     {
@@ -18,12 +19,19 @@ public class CameraZoomHandler : TopDownCameraController
 
     public void ZoomIn()
     {
-        StartCoroutine(CameraZoomCoroutine(baseOrthoSize, zoomOrthoSize));
+        if (zoomEventCoroutine != null)
+            StopCoroutine(zoomEventCoroutine);
+        
+        zoomEventCoroutine = StartCoroutine(CameraZoomCoroutine(baseOrthoSize, zoomOrthoSize));
+
     }
 
     public void ZoomOut()
     {
-        StartCoroutine(CameraZoomCoroutine(zoomOrthoSize, baseOrthoSize));
+        if (zoomEventCoroutine != null)
+            StopCoroutine(zoomEventCoroutine);
+        
+        zoomEventCoroutine = StartCoroutine(CameraZoomCoroutine(zoomOrthoSize, baseOrthoSize));
     }
 
     public bool IsZoomEventRunning()
