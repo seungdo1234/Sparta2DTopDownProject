@@ -1,14 +1,16 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TextInputHandler : MonoBehaviour
 {
     [SerializeField] private TMP_InputField nameTextField;
     [SerializeField] private Button joinBtn;
-
     [SerializeField] private int minNameLength;
+
+    public string NameText => nameTextField.text;
     public void TextChanged()
     {
          int textLength = nameTextField.text.Length;
@@ -23,12 +25,7 @@ public class TextInputHandler : MonoBehaviour
     public void SetPlayerNameInLogin()
     {
         PlayerPrefs.SetString("PlayerName",nameTextField.text);
+        SceneManager.LoadScene("MainScene");
     }
-    
-    // MainScene JoinBtn OnClick
-    public void SetPlayerNameInGame()
-    {
-        EntityDataManager.Instance.PlayerData.SetPlayerName(nameTextField.text);
-    }
-    
+  
 }

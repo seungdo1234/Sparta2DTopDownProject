@@ -7,6 +7,7 @@ public class DialougeIconPositionUpdateHandler : MonoBehaviour
 {
     [SerializeField] private Vector3 interactionIconPosition; // 상호 작용 가능 UI가 표시될 위치
     private RectTransform rect;
+    
     private bool isPlayerInside;
     private void Awake()
     {

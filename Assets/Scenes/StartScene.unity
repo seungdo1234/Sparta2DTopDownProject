@@ -610,7 +610,6 @@ GameObject:
   m_Component:
   - component: {fileID: 285786377}
   - component: {fileID: 285786378}
-  - component: {fileID: 285786379}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -654,18 +653,6 @@ MonoBehaviour:
   nameTextField: {fileID: 128645518}
   joinBtn: {fileID: 735578825}
   minNameLength: 2
---- !u!114 &285786379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285786376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60e9a4ee9ec059479b70f66c7bdf506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &358807550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,18 +1124,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 285786379}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: Load
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &735578826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,7 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43947c7c182e9e44a68545b928cbd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
 --- !u!4 &1138714296
 Transform:
   m_ObjectHideFlags: 0

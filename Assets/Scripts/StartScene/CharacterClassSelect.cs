@@ -20,10 +20,5 @@ public class CharacterClassSelect : MonoBehaviour
     {
         PlayerPrefs.SetInt("PlayerClass",characterNum);
     }
-    
-    // MainScene JoinBtn OnClick
-    public void DicideCharacterClassInGame(int characterNum)
-    {
-        EntityDataManager.Instance.PlayerData.SetCharacterClass(characterNum);
-    }
+
 }

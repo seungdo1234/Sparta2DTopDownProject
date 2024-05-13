@@ -9,7 +9,12 @@ public class UserViewHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI UserText;
 
 
-    private void OnEnable() // 참여 사용자 최신화
+    private void Start()
+    {
+        UpdateUserName();
+    }
+
+    public void UpdateUserName()
     {
         List<NPCData> npcList = EntityDataManager.Instance.NPCList;
         UserText.text = $"{EntityDataManager.Instance.PlayerData.Name}\n";
